@@ -80,7 +80,9 @@ let snakeY=snake[0].y;
 			if(snakeX<box || snakeY<box || snakeX>((canvasSize-1)*box) || snakeY>((canvasSize-1)*box) || collision(newHead,snake))
 			{
 				clearInterval(game);
-
+				if(confirm('Lost, again?')){
+    				window.location.reload();  
+				}
 			}
 
 			snake.unshift(newHead);
